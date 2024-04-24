@@ -1,9 +1,9 @@
 {
   "item.rosvoiesninjas.sceau_vierge": "Blank seal",
   "item.rosvoiesninjas.sceau_explosif_item": "Explosive seal",
-  "item.rosvoiesninjas.sceau_scellement": "Sealing seal",
-  "item.rosvoiesninjas.sceau_chakra": "Chakra seal",
-  "item.rosvoiesninjas.sceau_chakra_autrui": "Other's chakra seal",
+  "item.rosvoiesninjas.sceau_scellement_item": "Sealing seal",
+  "item.rosvoiesninjas.sceau_chakra_item": "Chakra seal",
+  "item.rosvoiesninjas.sceau_chakra_autrui_item": "Other's chakra seal",
 
   "creativetab.ros_voies_ninjas_tab": "ROS ninja ways Tab"
 }

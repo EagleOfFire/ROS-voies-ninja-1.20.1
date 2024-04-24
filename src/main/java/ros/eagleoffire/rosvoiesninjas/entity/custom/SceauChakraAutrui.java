@@ -14,11 +14,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import ros.eagleoffire.rosvoiesninjas.ROSVoiesNinjas;
 
-public class sceau_explosif<T extends Entity> extends EntityModel<T> {
+public class SceauChakraAutrui<T extends Entity> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(ROSVoiesNinjas.MODID, "sceau_explosif"), "main");
+public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(ROSVoiesNinjas.MODID, "sceau_chakra_autrui"), "main");
 	private final ModelPart bb_main;
-	public sceau_explosif(ModelPart root) {
+	public SceauChakraAutrui(ModelPart root) {
 		this.bb_main = root.getChild("flag");
 	}
 	public static LayerDefinition createBodyLayer() {

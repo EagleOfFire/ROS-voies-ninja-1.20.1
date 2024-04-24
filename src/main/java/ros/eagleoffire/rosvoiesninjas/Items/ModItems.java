@@ -1,5 +1,7 @@
 package ros.eagleoffire.rosvoiesninjas.Items;
 
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.HangingEntityItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,16 +18,17 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SCEAU_EXPLOSIF_ITEM = ITEMS.register("sceau_explosif_item",
-        () -> new SceauExplosifItem(new Item.Properties()));
+            () -> new SceauExplosifItem(new Item.Properties()));
 
-    public static final RegistryObject<Item> SCEAU_SCELLEMENT = ITEMS.register("sceau_scellement",
-            () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> SCEAU_CHAKRA = ITEMS.register("sceau_chakra",
-            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SCEAU_CHAKRA_ITEM = ITEMS.register("sceau_chakra_item",
+            () -> new SceauChakraItem(new Item.Properties()));
 
-    public static final RegistryObject<Item> SCEAU_CHAKRA_AUTRUI = ITEMS.register("sceau_chakra_autrui",
-            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SCEAU_SCELLEMENT_ITEM = ITEMS.register("sceau_scellement_item",
+            () -> new SceauScellementItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> SCEAU_CHAKRA_AUTRUI_ITEM = ITEMS.register("sceau_chakra_autrui_item",
+            () -> new SceauChakraAutruiItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

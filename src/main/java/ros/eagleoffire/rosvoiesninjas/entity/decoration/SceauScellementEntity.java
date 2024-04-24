@@ -1,4 +1,3 @@
-
 //
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
@@ -7,8 +6,10 @@
 package ros.eagleoffire.rosvoiesninjas.entity.decoration;
 
 import com.mojang.logging.LogUtils;
+
 import java.util.OptionalInt;
 import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -50,7 +51,7 @@ import org.slf4j.Logger;
 import ros.eagleoffire.rosvoiesninjas.Items.ModItems;
 import ros.eagleoffire.rosvoiesninjas.entity.custom.ModEntities;
 
-public class SceauExplosifEntity extends HangingEntity {
+public class SceauScellementEntity extends HangingEntity {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final EntityDataAccessor<ItemStack> DATA_ITEM;
     private static final EntityDataAccessor<Integer> DATA_ROTATION;
@@ -58,15 +59,15 @@ public class SceauExplosifEntity extends HangingEntity {
     private float dropChance;
     private boolean fixed;
 
-   public SceauExplosifEntity(EntityType<? extends SceauExplosifEntity> pEntityType, Level pLevel) {
+    public SceauScellementEntity(EntityType<? extends SceauScellementEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.dropChance = 1.0F;
-        //this.direction = Direction.DOWN;
+        this.direction = Direction.DOWN;
         if (Direction.DOWN.getAxis().isHorizontal()) {
             this.setXRot(0.0F);
-            this.setYRot((float)(this.direction.get2DDataValue() * 90));
+            this.setYRot((float) (this.direction.get2DDataValue() * 90));
         } else {
-            this.setXRot((float)(-90 * Direction.DOWN.getAxisDirection().getStep()));
+            this.setXRot((float) (-90 * Direction.DOWN.getAxisDirection().getStep()));
             this.setYRot(0.0F);
         }
         this.xRotO = this.getXRot();
@@ -74,29 +75,25 @@ public class SceauExplosifEntity extends HangingEntity {
         this.recalculateBoundingBox();
     }
 
-    public SceauExplosifEntity(Level pLevel, BlockPos pPos, Direction pFacingDirection) {
-        this(ModEntities.SCEAU_EXPLOSIF.get(), pLevel, pPos, pFacingDirection);
+    public SceauScellementEntity(Level pLevel, BlockPos pPos, Direction pFacingDirection) {
+        this(ModEntities.SCEAU_SCELLEMENT.get(), pLevel, pPos, pFacingDirection);
     }
 
-    public SceauExplosifEntity(EntityType<? extends SceauExplosifEntity> pEntityType, Level pLevel, BlockPos pPos, Direction pDirection) {
+    public SceauScellementEntity(EntityType<? extends SceauScellementEntity> pEntityType, Level pLevel, BlockPos pPos, Direction pDirection) {
         super(pEntityType, pLevel, pPos);
         this.dropChance = 1.0F;
         this.direction = pDirection;
         if (pDirection.getAxis().isHorizontal()) {
             this.setXRot(0.0F);
-            this.setYRot((float)(this.direction.get2DDataValue() * 90));
+            this.setYRot((float) (this.direction.get2DDataValue() * 90));
         } else {
-            this.setXRot((float)(-90 * pDirection.getAxisDirection().getStep()));
+            this.setXRot((float) (-90 * pDirection.getAxisDirection().getStep()));
             this.setYRot(0.0F);
         }
         this.xRotO = this.getXRot();
         this.yRotO = this.getYRot();
         this.recalculateBoundingBox();
     }
-
-    //public SceauExplosif(EntityType<ItemFrame> itemFrame, Level pLevel, BlockPos pPos, Direction pFacingDirection) {
-    //    super(itemFrame, pLevel);
-    //}
 
     protected float getEyeHeight(Pose pPose, EntityDimensions pSize) {
         return 0.0F;
@@ -114,9 +111,9 @@ public class SceauExplosifEntity extends HangingEntity {
         System.out.println("direction : " + direction);
         if (pFacingDirection.getAxis().isHorizontal()) {
             this.setXRot(0.0F);
-            this.setYRot((float)(this.direction.get2DDataValue() * 90));
+            this.setYRot((float) (this.direction.get2DDataValue() * 90));
         } else {
-            this.setXRot((float)(-90 * pFacingDirection.getAxisDirection().getStep()));
+            this.setXRot((float) (-90 * pFacingDirection.getAxisDirection().getStep()));
             this.setYRot(0.0F);
         }
 
@@ -128,13 +125,13 @@ public class SceauExplosifEntity extends HangingEntity {
     protected void recalculateBoundingBox() {
         this.direction = Direction.UP;
         double $$0 = 0.46875;
-        double $$1 = (double)this.pos.getX() + 0.5 - (double)this.direction.getStepX() * 0.46875;
-        double $$2 = (double)this.pos.getY() + 0.5 - (double)this.direction.getStepY() * 0.46875;
-        double $$3 = (double)this.pos.getZ() + 0.5 - (double)this.direction.getStepZ() * 0.46875;
+        double $$1 = (double) this.pos.getX() + 0.5 - (double) this.direction.getStepX() * 0.46875;
+        double $$2 = (double) this.pos.getY() + 0.5 - (double) this.direction.getStepY() * 0.46875;
+        double $$3 = (double) this.pos.getZ() + 0.5 - (double) this.direction.getStepZ() * 0.46875;
         this.setPosRaw($$1, $$2, $$3);
-        double $$4 = (double)this.getWidth();
-        double $$5 = (double)this.getHeight();
-        double $$6 = (double)this.getWidth();
+        double $$4 = (double) this.getWidth();
+        double $$5 = (double) this.getHeight();
+        double $$6 = (double) this.getWidth();
         Direction.Axis $$7 = this.direction.getAxis();
         switch ($$7) {
             case X -> $$4 = 1.0;
@@ -247,7 +244,7 @@ public class SceauExplosifEntity extends HangingEntity {
 
             } else {
                 if (pEntity instanceof Player) {
-                    Player $$3 = (Player)pEntity;
+                    Player $$3 = (Player) pEntity;
                     if ($$3.getAbilities().instabuild) {
                         this.removeFramedMap($$2);
                         return;
@@ -279,11 +276,11 @@ public class SceauExplosifEntity extends HangingEntity {
             }
 
         });
-        pStack.setEntityRepresentation((Entity)null);
+        pStack.setEntityRepresentation((Entity) null);
     }
 
     public ItemStack getItem() {
-        return (ItemStack)this.getEntityData().get(DATA_ITEM);
+        return (ItemStack) this.getEntityData().get(DATA_ITEM);
     }
 
     public OptionalInt getFramedMapId() {
@@ -330,11 +327,11 @@ public class SceauExplosifEntity extends HangingEntity {
     public SlotAccess getSlot(int pSlot) {
         return pSlot == 0 ? new SlotAccess() {
             public ItemStack get() {
-                return SceauExplosifEntity.this.getItem();
+                return SceauScellementEntity.this.getItem();
             }
 
             public boolean set(ItemStack p_149635_) {
-                SceauExplosifEntity.this.setItem(p_149635_);
+                SceauScellementEntity.this.setItem(p_149635_);
                 return true;
             }
         } : super.getSlot(pSlot);
@@ -356,7 +353,7 @@ public class SceauExplosifEntity extends HangingEntity {
     }
 
     public int getRotation() {
-        return (Integer)this.getEntityData().get(DATA_ROTATION);
+        return (Integer) this.getEntityData().get(DATA_ROTATION);
     }
 
     public void setRotation(int pRotation) {
@@ -375,11 +372,11 @@ public class SceauExplosifEntity extends HangingEntity {
         super.addAdditionalSaveData(pCompound);
         if (!this.getItem().isEmpty()) {
             pCompound.put("Item", this.getItem().save(new CompoundTag()));
-            pCompound.putByte("ItemRotation", (byte)this.getRotation());
+            pCompound.putByte("ItemRotation", (byte) this.getRotation());
             pCompound.putFloat("ItemDropChance", this.dropChance);
         }
 
-        pCompound.putByte("Facing", (byte)this.direction.get3DDataValue());
+        pCompound.putByte("Facing", (byte) this.direction.get3DDataValue());
         pCompound.putBoolean("Invisible", this.isInvisible());
         pCompound.putBoolean("Fixed", this.fixed);
     }
@@ -467,17 +464,17 @@ public class SceauExplosifEntity extends HangingEntity {
     }
 
     protected ItemStack getFrameItemStack() {
-        return new ItemStack(ModItems.SCEAU_EXPLOSIF_ITEM.get());
+        return new ItemStack(ModItems.SCEAU_SCELLEMENT_ITEM.get());
     }
 
     public float getVisualRotationYInDegrees() {
         Direction $$0 = this.getDirection();
         int $$1 = $$0.getAxis().isVertical() ? 90 * $$0.getAxisDirection().getStep() : 0;
-        return (float)Mth.wrapDegrees(180 + $$0.get2DDataValue() * 90 + this.getRotation() * 45 + $$1);
+        return (float) Mth.wrapDegrees(180 + $$0.get2DDataValue() * 90 + this.getRotation() * 45 + $$1);
     }
 
     static {
-        DATA_ITEM = SynchedEntityData.defineId(SceauExplosifEntity.class, EntityDataSerializers.ITEM_STACK);
-        DATA_ROTATION = SynchedEntityData.defineId(SceauExplosifEntity.class, EntityDataSerializers.INT);
+        DATA_ITEM = SynchedEntityData.defineId(SceauScellementEntity.class, EntityDataSerializers.ITEM_STACK);
+        DATA_ROTATION = SynchedEntityData.defineId(SceauScellementEntity.class, EntityDataSerializers.INT);
     }
 }

@@ -1,4 +1,3 @@
-
 //
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
@@ -50,7 +49,7 @@ import org.slf4j.Logger;
 import ros.eagleoffire.rosvoiesninjas.Items.ModItems;
 import ros.eagleoffire.rosvoiesninjas.entity.custom.ModEntities;
 
-public class SceauExplosifEntity extends HangingEntity {
+public class SceauChakraAutruiEntity extends HangingEntity {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final EntityDataAccessor<ItemStack> DATA_ITEM;
     private static final EntityDataAccessor<Integer> DATA_ROTATION;
@@ -58,10 +57,10 @@ public class SceauExplosifEntity extends HangingEntity {
     private float dropChance;
     private boolean fixed;
 
-   public SceauExplosifEntity(EntityType<? extends SceauExplosifEntity> pEntityType, Level pLevel) {
+   public SceauChakraAutruiEntity(EntityType<? extends SceauChakraAutruiEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.dropChance = 1.0F;
-        //this.direction = Direction.DOWN;
+        this.direction = Direction.DOWN;
         if (Direction.DOWN.getAxis().isHorizontal()) {
             this.setXRot(0.0F);
             this.setYRot((float)(this.direction.get2DDataValue() * 90));
@@ -74,11 +73,11 @@ public class SceauExplosifEntity extends HangingEntity {
         this.recalculateBoundingBox();
     }
 
-    public SceauExplosifEntity(Level pLevel, BlockPos pPos, Direction pFacingDirection) {
-        this(ModEntities.SCEAU_EXPLOSIF.get(), pLevel, pPos, pFacingDirection);
+    public SceauChakraAutruiEntity(Level pLevel, BlockPos pPos, Direction pFacingDirection) {
+        this(ModEntities.SCEAU_CHAKRA_AUTRUI.get(), pLevel, pPos, pFacingDirection);
     }
 
-    public SceauExplosifEntity(EntityType<? extends SceauExplosifEntity> pEntityType, Level pLevel, BlockPos pPos, Direction pDirection) {
+    public SceauChakraAutruiEntity(EntityType<? extends SceauChakraAutruiEntity> pEntityType, Level pLevel, BlockPos pPos, Direction pDirection) {
         super(pEntityType, pLevel, pPos);
         this.dropChance = 1.0F;
         this.direction = pDirection;
@@ -330,11 +329,11 @@ public class SceauExplosifEntity extends HangingEntity {
     public SlotAccess getSlot(int pSlot) {
         return pSlot == 0 ? new SlotAccess() {
             public ItemStack get() {
-                return SceauExplosifEntity.this.getItem();
+                return SceauChakraAutruiEntity.this.getItem();
             }
 
             public boolean set(ItemStack p_149635_) {
-                SceauExplosifEntity.this.setItem(p_149635_);
+                SceauChakraAutruiEntity.this.setItem(p_149635_);
                 return true;
             }
         } : super.getSlot(pSlot);
@@ -467,7 +466,7 @@ public class SceauExplosifEntity extends HangingEntity {
     }
 
     protected ItemStack getFrameItemStack() {
-        return new ItemStack(ModItems.SCEAU_EXPLOSIF_ITEM.get());
+        return new ItemStack(ModItems.SCEAU_CHAKRA_AUTRUI_ITEM.get());
     }
 
     public float getVisualRotationYInDegrees() {
@@ -477,7 +476,7 @@ public class SceauExplosifEntity extends HangingEntity {
     }
 
     static {
-        DATA_ITEM = SynchedEntityData.defineId(SceauExplosifEntity.class, EntityDataSerializers.ITEM_STACK);
-        DATA_ROTATION = SynchedEntityData.defineId(SceauExplosifEntity.class, EntityDataSerializers.INT);
+        DATA_ITEM = SynchedEntityData.defineId(SceauChakraAutruiEntity.class, EntityDataSerializers.ITEM_STACK);
+        DATA_ROTATION = SynchedEntityData.defineId(SceauChakraAutruiEntity.class, EntityDataSerializers.INT);
     }
 }

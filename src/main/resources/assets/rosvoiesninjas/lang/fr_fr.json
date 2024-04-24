@@ -1,8 +1,8 @@
 {
   "creativetab.ros_voies_ninjas_tab": "ROS Voies Ninjas Tab",
-  "item.rosvoiesninjas.sceau_chakra": "Sceau chakra",
-  "item.rosvoiesninjas.sceau_chakra_autrui": "Sceau chakra",
+  "item.rosvoiesninjas.sceau_chakra_item": "Sceau chakra",
+  "item.rosvoiesninjas.sceau_chakra_autrui_item": "Sceau chakra",
   "item.rosvoiesninjas.sceau_explosif_item": "Sceau explosif",
-  "item.rosvoiesninjas.sceau_scellement": "Sceau scellement",
+  "item.rosvoiesninjas.sceau_scellement_item": "Sceau scellement",
   "item.rosvoiesninjas.sceau_vierge": "Sceau Vierge"
 }

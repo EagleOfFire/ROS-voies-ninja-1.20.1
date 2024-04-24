@@ -28,8 +28,9 @@ public class ROSVoiesNinjas {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModCreativeModTabs.register(modEventBus);
-        ModEntities.ENTITIES.register(modEventBus);
-        ModItems.ITEMS.register(modEventBus);
+
+        ModEntities.register(modEventBus);
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

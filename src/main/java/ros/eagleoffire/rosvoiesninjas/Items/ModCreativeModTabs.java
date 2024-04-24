@@ -14,14 +14,14 @@ public class ModCreativeModTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ROSVoiesNinjas.MODID);
 
     public static final RegistryObject<CreativeModeTab> ROS_VOIES_NINJAS_TAB = CREATIVE_MODE_TAB.register("ros_voies_ninjas_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SCEAU_VIERGE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SCEAU_EXPLOSIF_ITEM.get()))
                     .title(Component.translatable("creativetab.ros_voies_ninjas_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.SCEAU_VIERGE.get());
                         pOutput.accept(ModItems.SCEAU_EXPLOSIF_ITEM.get());
-                        pOutput.accept(ModItems.SCEAU_CHAKRA.get());
-                        pOutput.accept(ModItems.SCEAU_SCELLEMENT.get());
-                        pOutput.accept(ModItems.SCEAU_CHAKRA_AUTRUI.get());
+                        pOutput.accept(ModItems.SCEAU_CHAKRA_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_SCELLEMENT_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_CHAKRA_AUTRUI_ITEM.get());
                     })
                     .build());
 
