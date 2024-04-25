@@ -1,4 +1,4 @@
-package ros.eagleoffire.rosvoiesninjas;
+package ros.eagleoffire.rosvoiesninjas.ProgressionVoiesNinjas;
 
 public class VoiesNinjas {
     private String NAME;

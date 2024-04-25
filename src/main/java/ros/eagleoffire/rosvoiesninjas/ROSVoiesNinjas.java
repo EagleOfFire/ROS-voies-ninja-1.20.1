@@ -1,7 +1,6 @@
 package ros.eagleoffire.rosvoiesninjas;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,7 +15,7 @@ import org.slf4j.Logger;
 import ros.eagleoffire.rosvoiesninjas.Items.ModCreativeModTabs;
 import ros.eagleoffire.rosvoiesninjas.Items.ModItems;
 import ros.eagleoffire.rosvoiesninjas.client.renderer.entity.SceauExplosifRenderer;
-import ros.eagleoffire.rosvoiesninjas.entity.custom.ModEntities;
+import ros.eagleoffire.rosvoiesninjas.entity.ModEntities;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ROSVoiesNinjas.MODID)

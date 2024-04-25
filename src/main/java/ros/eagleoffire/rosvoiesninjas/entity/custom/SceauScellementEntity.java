@@ -1,4 +1,4 @@
-package ros.eagleoffire.rosvoiesninjas.entity.decoration;
+package ros.eagleoffire.rosvoiesninjas.entity.custom;
 
 import com.mojang.logging.LogUtils;
 import java.util.OptionalInt;
@@ -41,25 +41,25 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.apache.commons.lang3.Validate;
 import org.slf4j.Logger;
-import ros.eagleoffire.rosvoiesninjas.entity.custom.ModEntities;
+import ros.eagleoffire.rosvoiesninjas.entity.ModEntities;
 
-public class SceauChakraEntity extends HangingEntity {
+public class SceauScellementEntity extends HangingEntity {
    private static final Logger LOGGER = LogUtils.getLogger();
-   private static final EntityDataAccessor<ItemStack> DATA_ITEM = SynchedEntityData.defineId(SceauChakraEntity.class, EntityDataSerializers.ITEM_STACK);
-   private static final EntityDataAccessor<Integer> DATA_ROTATION = SynchedEntityData.defineId(SceauChakraEntity.class, EntityDataSerializers.INT);
+   private static final EntityDataAccessor<ItemStack> DATA_ITEM = SynchedEntityData.defineId(SceauScellementEntity.class, EntityDataSerializers.ITEM_STACK);
+   private static final EntityDataAccessor<Integer> DATA_ROTATION = SynchedEntityData.defineId(SceauScellementEntity.class, EntityDataSerializers.INT);
    public static final int NUM_ROTATIONS = 8;
    private float dropChance = 1.0F;
    private boolean fixed;
 
-   public SceauChakraEntity(EntityType<? extends HangingEntity> pEntityType, Level pLevel) {
+   public SceauScellementEntity(EntityType<? extends HangingEntity> pEntityType, Level pLevel) {
       super(pEntityType, pLevel);
    }
 
-   public SceauChakraEntity(Level pLevel, BlockPos pPos, Direction pFacingDirection) {
-      this(ModEntities.SCEAU_CHAKRA.get(), pLevel, pPos, pFacingDirection);
+   public SceauScellementEntity(Level pLevel, BlockPos pPos, Direction pFacingDirection) {
+      this(ModEntities.SCEAU_SCELLEMENT.get(), pLevel, pPos, pFacingDirection);
    }
 
-   public SceauChakraEntity(EntityType<? extends SceauChakraEntity> pEntityType, Level pLevel, BlockPos pPos, Direction pDirection) {
+   public SceauScellementEntity(EntityType<? extends SceauScellementEntity> pEntityType, Level pLevel, BlockPos pPos, Direction pDirection) {
       super(pEntityType, pLevel, pPos);
       this.setDirection(pDirection);
    }
@@ -327,11 +327,11 @@ public class SceauChakraEntity extends HangingEntity {
    public SlotAccess getSlot(int pSlot) {
       return pSlot == 0 ? new SlotAccess() {
          public ItemStack get() {
-            return SceauChakraEntity.this.getItem();
+            return SceauScellementEntity.this.getItem();
          }
 
          public boolean set(ItemStack p_149635_) {
-            SceauChakraEntity.this.setItem(p_149635_);
+            SceauScellementEntity.this.setItem(p_149635_);
             return true;
          }
       } : super.getSlot(pSlot);

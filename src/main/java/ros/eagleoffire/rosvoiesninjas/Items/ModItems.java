@@ -1,14 +1,11 @@
 package ros.eagleoffire.rosvoiesninjas.Items;
 
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.HangingEntityItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import ros.eagleoffire.rosvoiesninjas.ROSVoiesNinjas;
-import ros.eagleoffire.rosvoiesninjas.entity.custom.ModEntities;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =

@@ -6,11 +6,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import ros.eagleoffire.rosvoiesninjas.ROSVoiesNinjas;
 import net.minecraftforge.client.event.EntityRenderersEvent.RegisterRenderers;
-import ros.eagleoffire.rosvoiesninjas.client.renderer.entity.SceauChakraAutruiRenderer;
-import ros.eagleoffire.rosvoiesninjas.client.renderer.entity.SceauChakraRenderer;
-import ros.eagleoffire.rosvoiesninjas.client.renderer.entity.SceauScellementRenderer;
-import ros.eagleoffire.rosvoiesninjas.entity.custom.ModEntities;
-import ros.eagleoffire.rosvoiesninjas.client.renderer.entity.SceauExplosifRenderer;
+import ros.eagleoffire.rosvoiesninjas.client.renderer.entity.*;
+import ros.eagleoffire.rosvoiesninjas.entity.ModEntities;
 
 @OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber(modid= ROSVoiesNinjas.MODID, value=Dist.CLIENT, bus= Mod.EventBusSubscriber.Bus.MOD)
@@ -22,5 +19,4 @@ public class ClientModBusEvent {
 		event.registerEntityRenderer(ModEntities.SCEAU_SCELLEMENT.get(), SceauScellementRenderer::new);
 		event.registerEntityRenderer(ModEntities.SCEAU_CHAKRA_AUTRUI.get(), SceauChakraAutruiRenderer::new);
 	}
-
 }

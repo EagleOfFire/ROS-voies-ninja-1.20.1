@@ -5,7 +5,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
-import ros.eagleoffire.rosvoiesninjas.VoiesNinjas;
+
 import java.util.Objects;
 
 public class ProgressionVoiesNinjas {

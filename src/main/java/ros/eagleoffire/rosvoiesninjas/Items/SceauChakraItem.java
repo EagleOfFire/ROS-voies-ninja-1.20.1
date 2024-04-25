@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
-import ros.eagleoffire.rosvoiesninjas.entity.decoration.SceauChakraEntity;
+import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauChakraEntity;
 
 public class SceauChakraItem extends HangingEntityItem {
     public SceauChakraItem(EntityType<? extends HangingEntity> pType, Item.Properties pProperties) {

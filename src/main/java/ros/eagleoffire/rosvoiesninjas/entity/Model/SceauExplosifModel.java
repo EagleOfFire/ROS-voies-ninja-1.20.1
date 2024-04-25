@@ -1,4 +1,4 @@
-package ros.eagleoffire.rosvoiesninjas.entity.custom;// Made with Blockbench 4.9.4
+package ros.eagleoffire.rosvoiesninjas.entity.Model;// Made with Blockbench 4.9.4
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -11,21 +11,23 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.decoration.HangingEntity;
 import ros.eagleoffire.rosvoiesninjas.ROSVoiesNinjas;
 
-public class sceau_explosif<T extends Entity> extends EntityModel<T> {
-	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
+public class SceauExplosifModel<T extends HangingEntity> extends EntityModel<T> {
 public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(ROSVoiesNinjas.MODID, "sceau_explosif"), "main");
 	private final ModelPart bb_main;
-	public sceau_explosif(ModelPart root) {
+	public SceauExplosifModel(ModelPart root) {
 		this.bb_main = root.getChild("flag");
 	}
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition flag = partdefinition.addOrReplaceChild("flag", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, 0.0F, -8.0F, 8.0F, 0.0F, 16.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition flag = partdefinition.addOrReplaceChild("flag", CubeListBuilder.create()
+				.texOffs(0, 0)
+				.addBox(-4.0F, 0.0F, -8.0F, 8.0F, 0.0F, 16.0F,
+						new CubeDeformation(0.0F)), PartPose.offset(0.0F, -24.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
