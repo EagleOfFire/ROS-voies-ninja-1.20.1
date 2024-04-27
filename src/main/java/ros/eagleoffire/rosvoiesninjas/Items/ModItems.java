@@ -12,11 +12,10 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, ROSVoiesNinjas.MODID);
 
     public static final RegistryObject<Item> SCEAU_VIERGE = ITEMS.register("sceau_vierge",
-            () -> new Item(new Item.Properties()));
+            () -> new SceauViergeItem(new Item.Properties()));
 
     public static final RegistryObject<Item> SCEAU_EXPLOSIF_ITEM = ITEMS.register("sceau_explosif_item",
             () -> new SceauExplosifItem(new Item.Properties()));
-
 
     public static final RegistryObject<Item> SCEAU_CHAKRA_ITEM = ITEMS.register("sceau_chakra_item",
             () -> new SceauChakraItem(new Item.Properties()));

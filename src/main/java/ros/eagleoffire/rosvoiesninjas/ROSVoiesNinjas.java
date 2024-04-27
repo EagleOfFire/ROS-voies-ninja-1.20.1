@@ -1,6 +1,7 @@
 package ros.eagleoffire.rosvoiesninjas;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,6 +17,7 @@ import ros.eagleoffire.rosvoiesninjas.Items.ModCreativeModTabs;
 import ros.eagleoffire.rosvoiesninjas.Items.ModItems;
 import ros.eagleoffire.rosvoiesninjas.client.renderer.entity.SceauExplosifRenderer;
 import ros.eagleoffire.rosvoiesninjas.entity.ModEntities;
+import ros.eagleoffire.rosvoiesninjas.screen.SceauViergeScreen;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ROSVoiesNinjas.MODID)
@@ -53,7 +55,7 @@ public class ROSVoiesNinjas {
     public static class ClientModEvents{
         @SubscribeEvent
         public static void onClientSetup(FMLCommonSetupEvent event){
-            EntityRenderers.register(ModEntities.SCEAU_EXPLOSIF.get(), SceauExplosifRenderer::new);
+
         }
     }
 }
