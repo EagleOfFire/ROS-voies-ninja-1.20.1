@@ -1,5 +1,7 @@
 package ros.eagleoffire.rosvoiesninjas.ProgressionVoiesNinjas;
 
+import net.minecraft.network.FriendlyByteBuf;
+
 public class VoiesNinjas {
     private String NAME;
     private int XP = 0;

@@ -9,10 +9,10 @@ import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.players.PlayerList;
-import net.minecraft.server.MinecraftServer;
-import net.minecraftforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.NotNull;
 import ros.eagleoffire.rosvoiesninjas.ProgressionVoiesNinjas.ProgressionVoiesNinjasProvider;
+import ros.eagleoffire.rosvoiesninjas.networking.ModMessages;
+import ros.eagleoffire.rosvoiesninjas.networking.packet.*;
 
 import java.util.Objects;
 
@@ -36,13 +36,12 @@ public class AddProgressionVoiesNinjasCommand {
         ServerPlayer TargetedPlayer = Objects.requireNonNull(OnlinePlayer.getPlayerByName(target));
 
         TargetedPlayer.getCapability(ProgressionVoiesNinjasProvider.PROGRESSION_VOIES_NINJAS).ifPresent(progression -> {
-           progression.addXP(progression.getByName(voie),qts);
+            source.sendSuccess(() -> {
+            progression.addXP(progression.getByName(voie),qts);
+            return Component.literal("Successfully added " + qts + "XP to " + voie + " for player " + target);
+        }, true);
+           ModMessages.sendToPlayer(new FuinjutsuDataSyncS2CPacket(progression.getByName("Fuinjutsu")), TargetedPlayer);
         });
-
-       source.sendSuccess(() -> {
-            return Component.literal("Successfully added " + qts + "XP to " + voie + " for player " + target);}, true);
-
        return 1;
     }
-
 }

@@ -1,7 +1,7 @@
 package ros.eagleoffire.rosvoiesninjas.event;
 
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
@@ -19,6 +19,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import ros.eagleoffire.rosvoiesninjas.commands.AddProgressionVoiesNinjasCommand;
 import ros.eagleoffire.rosvoiesninjas.commands.GetProgressionVoiesNinjasCommand;
 import ros.eagleoffire.rosvoiesninjas.commands.RemoveProgressionVoiesNinjasCommand;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import ros.eagleoffire.rosvoiesninjas.networking.ModMessages;
+import ros.eagleoffire.rosvoiesninjas.networking.packet.*;
 
 @Mod.EventBusSubscriber(modid = ROSVoiesNinjas.MODID)
 public class ModEvents {
@@ -65,6 +68,17 @@ public class ModEvents {
                     //event.player.sendSystemMessage(Component.literal(String.format("Your progression is at %2d XP point", progression.getExperience())));
                 }
             });
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
+        if(!event.getLevel().isClientSide()) {
+            if(event.getEntity() instanceof ServerPlayer player) {
+                player.getCapability(ProgressionVoiesNinjasProvider.PROGRESSION_VOIES_NINJAS).ifPresent(progression -> {
+                   ModMessages.sendToPlayer(new FuinjutsuDataSyncS2CPacket(progression.getByName("Fuinjutsu")), player);
+                });
+            }
         }
     }
 }

@@ -1,15 +1,24 @@
 package ros.eagleoffire.rosvoiesninjas.client;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.OptionInstance;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.network.NetworkHooks;
-import ros.eagleoffire.rosvoiesninjas.screen.SceauViergeScreen;
+import ros.eagleoffire.rosvoiesninjas.screen.*;
 
 public class ClientHooks {
     public static void openSceauViergeScreen(BlockPos position) {
         Minecraft.getInstance().setScreen(new SceauViergeScreen(position));
+    }
+    public static void openSceauExplosifScreen() {
+        Minecraft.getInstance().setScreen(new SceauExplosifScreen());
+    }
+    public static void openSceauChakraScreen() {
+        Minecraft.getInstance().setScreen(new SceauChakraScreen());
+    }
+    public static void openSceauScellementScreen() {
+        Minecraft.getInstance().setScreen(new SceauScellementScreen());
+    }
+    public static void openSceauChakraAutruiScreen() {
+        Minecraft.getInstance().setScreen(new SceauChakraAutruiScreen());
     }
 }

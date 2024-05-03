@@ -1,10 +1,7 @@
 package ros.eagleoffire.rosvoiesninjas.screen;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.OptionInstance;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -13,8 +10,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import org.jetbrains.annotations.NotNull;
 import ros.eagleoffire.rosvoiesninjas.ROSVoiesNinjas;
-
-import javax.swing.text.html.Option;
 
 public class SceauViergeScreen extends Screen {
     private static final Component TITLE =
@@ -55,6 +50,8 @@ public class SceauViergeScreen extends Screen {
 
     @Override
     public void render(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        int posCursor = getSectorID(mouseX,mouseY);
+        System.out.println(posCursor);
         graphics.blit(TEXTURE, 0, 0, 0, 0, this.imageWidth, this.imageHeight,this.minecraft.getWindow().getGuiScaledWidth(), this.minecraft.getWindow().getGuiScaledHeight());
         super.render(graphics, mouseX, mouseY, partialTicks);
     }
@@ -62,5 +59,19 @@ public class SceauViergeScreen extends Screen {
     @Override
     public boolean isPauseScreen() {
         return false;
+    }
+
+    public static int getSectorID(double mouseX, double mouseY) {
+        double angle = Math.atan2(mouseY, mouseX);
+        if (angle < 0) {
+            angle += 2 * Math.PI;
+        }
+        double angleDegrees = Math.toDegrees(angle);
+        int totalSectors = 8;
+        int sectorID = (int) Math.floor(angleDegrees / (360.0 / totalSectors)) + 1;
+        if (sectorID > totalSectors) {
+            sectorID = 1;
+        }
+        return sectorID;
     }
 }

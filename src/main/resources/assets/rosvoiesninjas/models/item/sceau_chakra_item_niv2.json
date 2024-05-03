@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "rosvoiesninjas:item/sceauchakra/sceau_chakra_item_niv2"
+  }
+}

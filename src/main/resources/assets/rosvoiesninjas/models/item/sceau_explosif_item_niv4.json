@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "rosvoiesninjas:item/sceauexplosif/sceau_explosif_item_niv4"
+  }
+}

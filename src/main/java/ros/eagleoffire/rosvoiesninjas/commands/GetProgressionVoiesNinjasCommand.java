@@ -10,6 +10,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.players.PlayerList;
 import org.jetbrains.annotations.NotNull;
 import ros.eagleoffire.rosvoiesninjas.ProgressionVoiesNinjas.ProgressionVoiesNinjasProvider;
+import ros.eagleoffire.rosvoiesninjas.networking.ModMessages;
+import ros.eagleoffire.rosvoiesninjas.networking.packet.*;
 
 import java.util.Objects;
 
@@ -42,6 +44,7 @@ public class GetProgressionVoiesNinjasCommand {
             +progression.getXP(progression.getByName("Kekkei Barriere")) + " XP in Kekkei Barriere which correspond to level "
                     + progression.getLVL(progression.getByName("Kekkei Barriere")) + " (max " + progression.getLVLmax(progression.getByName("Kekkei Barriere")) +")");
         }, true);
+           ModMessages.sendToPlayer(new FuinjutsuDataSyncS2CPacket(progression.getByName("Fuinjutsu")), TargetedPlayer);
         });
         return 1;
     }

@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "map=false": { "model": "block/sceau_explosif" },
-        "map=true":  { "model": "block/sceau_explosif" }
-    }
-}
