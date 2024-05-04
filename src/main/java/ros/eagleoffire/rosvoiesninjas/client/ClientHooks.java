@@ -6,8 +6,8 @@ import net.minecraft.server.level.ServerPlayer;
 import ros.eagleoffire.rosvoiesninjas.screen.*;
 
 public class ClientHooks {
-    public static void openSceauViergeScreen(BlockPos position) {
-        Minecraft.getInstance().setScreen(new SceauViergeScreen(position));
+    public static void openSceauViergeScreen() {
+        Minecraft.getInstance().setScreen(new SceauViergeScreen());
     }
     public static void openSceauExplosifScreen() {
         Minecraft.getInstance().setScreen(new SceauExplosifScreen());
