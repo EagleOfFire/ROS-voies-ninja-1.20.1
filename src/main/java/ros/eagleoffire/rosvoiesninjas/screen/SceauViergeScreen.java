@@ -1,16 +1,28 @@
 package ros.eagleoffire.rosvoiesninjas.screen;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.items.ItemHandlerHelper;
 import org.codehaus.plexus.util.dag.DAG;
 import org.jetbrains.annotations.NotNull;
 import ros.eagleoffire.rosvoiesninjas.ROSVoiesNinjas;
+import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauChakra.SceauChakraNiv0Entity;
+import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauChakraAutrui.SceauChakraAutruiNiv0Entity;
+import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauExplosif.SceauExplosifNiv0Entity;
+import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauScellement.SceauScellementNiv0Entity;
+import ros.eagleoffire.rosvoiesninjas.Items.ModItems;
 
 public class SceauViergeScreen extends Screen {
     private static final Component TITLE =
@@ -30,14 +42,23 @@ public class SceauViergeScreen extends Screen {
 
 
     private final int imageWidth, imageHeight;
-
+    private final UseOnContext Context;
     private int leftPos, topPos;
+    private Player player;
 
-    private Button button;
 
-    public SceauViergeScreen() {
+    public SceauViergeScreen(Player Player) {
+        super(TITLE);
+        this.Context = null;
+        this.player = Player;
+        this.imageWidth = 1920;
+        this.imageHeight = 1920;
+    }
+
+    public SceauViergeScreen(UseOnContext pContext) {
         super(TITLE);
 
+        this.Context = pContext;
         this.imageWidth = 1920;
         this.imageHeight = 1920;
     }
@@ -52,7 +73,19 @@ public class SceauViergeScreen extends Screen {
         if(this.minecraft == null) return;
         Level level = this.minecraft.level;
         if(level == null) return;
+        if (this.Context != null) {
+            BlockEntity be = level.getBlockEntity(this.Context.getClickedPos());
+        }
+    }
 
+    @Override
+    public boolean mouseClicked(double mouseX, double mouseY, int pButton) {
+        if (Context != null){
+            useOnBlock(mouseX,mouseY,pButton);
+        }else{
+            useOnAir(mouseX,mouseY,pButton);
+        }
+        return super.mouseClicked(mouseX, mouseY, pButton);
     }
 
     @Override
@@ -96,5 +129,68 @@ public class SceauViergeScreen extends Screen {
         }else{
             return 4;
         }
+    }
+
+    public void useOnBlock(double mouseX, double mouseY, int pButton){
+        int posCursor = getSectorID(mouseX,mouseY,this.minecraft.getWindow().getGuiScaledWidth(),this.minecraft.getWindow().getGuiScaledHeight());
+        Level level = Context.getLevel();
+        BlockPos blockpos = Context.getClickedPos();
+        Direction direction = Context.getClickedFace();
+        BlockPos blockpos1 = blockpos.relative(direction);
+        Player player = Context.getPlayer();
+        switch(posCursor) {
+            case 1:
+                SceauExplosifNiv0Entity hangingentityExplosif = new SceauExplosifNiv0Entity(level, blockpos1, direction);
+                hangingentityExplosif.setDirection(direction);
+                hangingentityExplosif.playPlacementSound();
+                level.gameEvent(player, GameEvent.ENTITY_PLACE, hangingentityExplosif.position());
+                level.addFreshEntity(hangingentityExplosif);
+                break;
+            case 2:
+                SceauScellementNiv0Entity hangingentityScellement = new SceauScellementNiv0Entity(level, blockpos1, direction);
+                hangingentityScellement.setDirection(direction);
+                hangingentityScellement.playPlacementSound();
+                level.gameEvent(player, GameEvent.ENTITY_PLACE, hangingentityScellement.position());
+                level.addFreshEntity(hangingentityScellement);
+                break;
+            case 3:
+                SceauChakraNiv0Entity hangingentityChakra = new SceauChakraNiv0Entity(level, blockpos1, direction);
+                hangingentityChakra.setDirection(direction);
+                hangingentityChakra.playPlacementSound();
+                level.gameEvent(player, GameEvent.ENTITY_PLACE, hangingentityChakra.position());
+                level.addFreshEntity(hangingentityChakra);
+                break;
+            case 4:
+                SceauChakraAutruiNiv0Entity hangingentityChakraAutrui = new SceauChakraAutruiNiv0Entity(level, blockpos1, direction);
+                hangingentityChakraAutrui.setDirection(direction);
+                hangingentityChakraAutrui.playPlacementSound();
+                level.gameEvent(player, GameEvent.ENTITY_PLACE, hangingentityChakraAutrui.position());
+                level.addFreshEntity(hangingentityChakraAutrui);
+                break;
+            default:
+            }
+            player.getMainHandItem().setCount(player.getMainHandItem().getCount()-1);
+            Minecraft.getInstance().setScreen(null);
+    }
+
+    public void useOnAir(double mouseX, double mouseY, int pButton){
+        int posCursor = getSectorID(mouseX,mouseY,this.minecraft.getWindow().getGuiScaledWidth(),this.minecraft.getWindow().getGuiScaledHeight());
+        switch(posCursor) {
+            case 1:
+                ItemHandlerHelper.giveItemToPlayer(this.player, ModItems.SCEAU_EXPLOSIF_NIV0_ITEM.get().getDefaultInstance());
+                break;
+            case 2:
+                ItemHandlerHelper.giveItemToPlayer(this.player, ModItems.SCEAU_SCELLEMENT_NIV0_ITEM.get().getDefaultInstance());
+                break;
+            case 3:
+                ItemHandlerHelper.giveItemToPlayer(this.player, ModItems.SCEAU_CHAKRA_NIV0_ITEM.get().getDefaultInstance());
+                break;
+            case 4:
+                ItemHandlerHelper.giveItemToPlayer(this.player, ModItems.SCEAU_CHAKRA_AUTRUI_NIV0_ITEM.get().getDefaultInstance());
+                break;
+            default:
+        }
+        player.getMainHandItem().setCount(player.getMainHandItem().getCount()-1);
+        Minecraft.getInstance().setScreen(null);
     }
 }

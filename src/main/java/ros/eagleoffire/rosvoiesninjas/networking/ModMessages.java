@@ -18,24 +18,28 @@ public class ModMessages {
     }
 
     public static void register() {
-        SimpleChannel net = NetworkRegistry.ChannelBuilder
+        INSTANCE = NetworkRegistry.ChannelBuilder
                 .named(new ResourceLocation(ROSVoiesNinjas.MODID, "messages"))
                 .networkProtocolVersion(() -> "1.0")
                 .clientAcceptedVersions(s -> true)
                 .serverAcceptedVersions(s -> true)
                 .simpleChannel();
 
-        INSTANCE = net;
-
-        net.messageBuilder(FuinjutsuDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+        INSTANCE.messageBuilder(FuinjutsuDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(FuinjutsuDataSyncS2CPacket::new)
                 .encoder(FuinjutsuDataSyncS2CPacket::toBytes)
                 .consumerMainThread(FuinjutsuDataSyncS2CPacket::handle)
                 .add();
+
+        INSTANCE.messageBuilder(GiveSceauC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(GiveSceauC2SPacket::new)
+                .encoder(GiveSceauC2SPacket::toBytes)
+                .consumerMainThread(GiveSceauC2SPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {
-         INSTANCE.sendToServer(message);
+        INSTANCE.sendToServer(message);
     }
 
     public static <MSG> void sendToPlayer(MSG message, ServerPlayer player) {

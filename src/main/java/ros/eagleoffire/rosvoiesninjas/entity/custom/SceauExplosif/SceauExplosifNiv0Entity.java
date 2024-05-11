@@ -35,6 +35,7 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.MapItem;
@@ -435,7 +436,7 @@ public class SceauExplosifNiv0Entity extends HangingEntity {
         if(hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         if(!level.isClientSide()) return InteractionResult.SUCCESS;
         if (ClientFuinjutsuData.get_LVL() > 0) {
-           DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientHooks.openSceauExplosifScreen());
+           DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientHooks.openSceauExplosifScreen(pPlayer, this));
         }else {
            pPlayer.sendSystemMessage(Component.literal(String.format("You do not have the required level to access this seal")));
         }
@@ -474,5 +475,8 @@ public class SceauExplosifNiv0Entity extends HangingEntity {
       Direction direction = this.getDirection();
       int i = direction.getAxis().isVertical() ? 90 * direction.getAxisDirection().getStep() : 0;
       return (float)Mth.wrapDegrees(180 + direction.get2DDataValue() * 90 + this.getRotation() * 45 + i);
+   }
+
+   public void giveSceau(){
    }
 }

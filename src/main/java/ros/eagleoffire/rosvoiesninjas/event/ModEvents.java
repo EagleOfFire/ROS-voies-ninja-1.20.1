@@ -11,6 +11,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.server.command.ConfigCommand;
 import ros.eagleoffire.rosvoiesninjas.ProgressionVoiesNinjas.ProgressionVoiesNinjas;
 import ros.eagleoffire.rosvoiesninjas.ProgressionVoiesNinjas.ProgressionVoiesNinjasProvider;
@@ -80,5 +81,12 @@ public class ModEvents {
                 });
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void commonSetup(FMLCommonSetupEvent event){
+        event.enqueueWork(() -> {
+            ModMessages.register();
+        });
     }
 }
