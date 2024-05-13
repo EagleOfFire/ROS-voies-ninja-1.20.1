@@ -89,7 +89,7 @@ public class ProgressionVoiesNinjas {
         int LVL = VoieNinja.getLVL();
         int maxLVL = VoieNinja.getLVLmax();
         if (XP >= 1651 && maxLVL == 5){
-            if(NombreDeVoiesMaitrise == 1) {
+            if(NombreDeVoiesMaitrise <= 1) {
                 VoieNinja.setLVL(5);
             }
         }else if (XP >= 951 && maxLVL >= 4){

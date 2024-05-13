@@ -6,6 +6,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.network.NetworkEvent;
 import ros.eagleoffire.rosvoiesninjas.Items.ModItems;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
 public class GiveSceauC2SPacket {
@@ -35,7 +36,55 @@ public class GiveSceauC2SPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
             ServerPlayer player = supplier.get().getSender();
-            player.addItem(new ItemStack(ModItems.SCEAU_EXPLOSIF_NIV2_ITEM.get(), 1));
+            if(Objects.equals(sceauName, "Explosif")) {
+                if (nivSceau == 1){
+                    player.addItem(new ItemStack(ModItems.SCEAU_EXPLOSIF_NIV1_ITEM.get(), 1));
+                } else if (nivSceau == 2) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_EXPLOSIF_NIV2_ITEM.get(), 1));
+                } else if (nivSceau == 3) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_EXPLOSIF_NIV3_ITEM.get(), 1));
+                } else if (nivSceau == 4) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_EXPLOSIF_NIV4_ITEM.get(), 1));
+                }else if (nivSceau == 5){
+                    player.addItem(new ItemStack(ModItems.SCEAU_EXPLOSIF_NIV5_ITEM.get(), 1));
+                }
+            } else if (Objects.equals(sceauName, "Chakra")) {
+                if (nivSceau == 1){
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_NIV1_ITEM.get(), 1));
+                } else if (nivSceau == 2) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_NIV2_ITEM.get(), 1));
+                } else if (nivSceau == 3) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_NIV3_ITEM.get(), 1));
+                } else if (nivSceau == 4) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_NIV4_ITEM.get(), 1));
+                }else if (nivSceau == 5){
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_NIV5_ITEM.get(), 1));
+                }
+            } else if (Objects.equals(sceauName, "Scellement")) {
+                if (nivSceau == 1){
+                    player.addItem(new ItemStack(ModItems.SCEAU_SCELLEMENT_NIV1_ITEM.get(), 1));
+                } else if (nivSceau == 2) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_SCELLEMENT_NIV2_ITEM.get(), 1));
+                } else if (nivSceau == 3) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_SCELLEMENT_NIV3_ITEM.get(), 1));
+                } else if (nivSceau == 4) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_SCELLEMENT_NIV4_ITEM.get(), 1));
+                }else if (nivSceau == 5){
+                    player.addItem(new ItemStack(ModItems.SCEAU_SCELLEMENT_NIV5_ITEM.get(), 1));
+                }
+            }else if (Objects.equals(sceauName, "ChakraAutrui")){
+                if (nivSceau == 1){
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_AUTRUI_NIV1_ITEM.get(), 1));
+                } else if (nivSceau == 2) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_AUTRUI_NIV2_ITEM.get(), 1));
+                } else if (nivSceau == 3) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_AUTRUI_NIV3_ITEM.get(), 1));
+                } else if (nivSceau == 4) {
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_AUTRUI_NIV4_ITEM.get(), 1));
+                }else if (nivSceau == 5){
+                    player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_AUTRUI_NIV5_ITEM.get(), 1));
+                }
+            }
         });
     }
 }

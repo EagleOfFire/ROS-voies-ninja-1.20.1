@@ -2,12 +2,9 @@ package ros.eagleoffire.rosvoiesninjas.entity.custom.SceauExplosif;
 
 import com.mojang.logging.LogUtils;
 
-import java.util.Objects;
 import java.util.OptionalInt;
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -18,8 +15,6 @@ import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.players.PlayerList;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
@@ -35,7 +30,6 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.MapItem;
@@ -43,7 +37,6 @@ import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DiodeBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.saveddata.maps.MapItemSavedData;
@@ -52,9 +45,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
 import org.apache.commons.lang3.Validate;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
-import ros.eagleoffire.rosvoiesninjas.ProgressionVoiesNinjas.ProgressionVoiesNinjasProvider;
 import ros.eagleoffire.rosvoiesninjas.client.ClientHooks;
 import ros.eagleoffire.rosvoiesninjas.client.ProgressionVoiesNinjasData.ClientFuinjutsuData;
 import ros.eagleoffire.rosvoiesninjas.entity.ModEntities;
@@ -193,7 +184,7 @@ public class SceauExplosifNiv0Entity extends HangingEntity {
          return false;
       } else if (!pSource.is(DamageTypeTags.IS_EXPLOSION) && !this.getItem().isEmpty()) {
          if (!this.level().isClientSide) {
-            this.dropItem(pSource.getEntity(), false);
+            //this.dropItem(pSource.getEntity(), false);
             this.gameEvent(GameEvent.BLOCK_CHANGE, pSource.getEntity());
             this.playSound(this.getRemoveItemSound(), 1.0F, 1.0F);
          }
@@ -230,7 +221,7 @@ public class SceauExplosifNiv0Entity extends HangingEntity {
     */
    public void dropItem(@Nullable Entity pBrokenEntity) {
       this.playSound(this.getBreakSound(), 1.0F, 1.0F);
-      this.dropItem(pBrokenEntity, true);
+      //this.dropItem(pBrokenEntity, true);
       this.gameEvent(GameEvent.BLOCK_CHANGE, pBrokenEntity);
    }
 
@@ -475,8 +466,5 @@ public class SceauExplosifNiv0Entity extends HangingEntity {
       Direction direction = this.getDirection();
       int i = direction.getAxis().isVertical() ? 90 * direction.getAxisDirection().getStep() : 0;
       return (float)Mth.wrapDegrees(180 + direction.get2DDataValue() * 90 + this.getRotation() * 45 + i);
-   }
-
-   public void giveSceau(){
    }
 }

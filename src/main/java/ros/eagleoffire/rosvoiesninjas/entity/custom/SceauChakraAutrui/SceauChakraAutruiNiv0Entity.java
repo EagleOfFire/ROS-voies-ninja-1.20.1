@@ -182,7 +182,6 @@ public class SceauChakraAutruiNiv0Entity extends HangingEntity {
          return false;
       } else if (!pSource.is(DamageTypeTags.IS_EXPLOSION) && !this.getItem().isEmpty()) {
          if (!this.level().isClientSide) {
-            this.dropItem(pSource.getEntity(), false);
             this.gameEvent(GameEvent.BLOCK_CHANGE, pSource.getEntity());
             this.playSound(this.getRemoveItemSound(), 1.0F, 1.0F);
          }
@@ -219,7 +218,6 @@ public class SceauChakraAutruiNiv0Entity extends HangingEntity {
     */
    public void dropItem(@Nullable Entity pBrokenEntity) {
       this.playSound(this.getBreakSound(), 1.0F, 1.0F);
-      this.dropItem(pBrokenEntity, true);
       this.gameEvent(GameEvent.BLOCK_CHANGE, pBrokenEntity);
    }
 
@@ -233,40 +231,6 @@ public class SceauChakraAutruiNiv0Entity extends HangingEntity {
 
    public SoundEvent getPlaceSound() {
       return SoundEvents.ITEM_FRAME_PLACE;
-   }
-
-   private void dropItem(@Nullable Entity pEntity, boolean pDropSelf) {
-      if (!this.fixed) {
-         ItemStack itemstack = this.getItem();
-         this.setItem(ItemStack.EMPTY);
-         if (!this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
-            if (pEntity == null) {
-               this.removeFramedMap(itemstack);
-            }
-
-         } else {
-            if (pEntity instanceof Player) {
-               Player player = (Player)pEntity;
-               if (player.getAbilities().instabuild) {
-                  this.removeFramedMap(itemstack);
-                  return;
-               }
-            }
-
-            if (pDropSelf) {
-               this.spawnAtLocation(this.getFrameItemStack());
-            }
-
-            if (!itemstack.isEmpty()) {
-               itemstack = itemstack.copy();
-               this.removeFramedMap(itemstack);
-               if (this.random.nextFloat() < this.dropChance) {
-                  this.spawnAtLocation(itemstack);
-               }
-            }
-
-         }
-      }
    }
 
    /**
@@ -425,7 +389,7 @@ public class SceauChakraAutruiNiv0Entity extends HangingEntity {
         if(hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         if(!level.isClientSide()) return InteractionResult.SUCCESS;
         if (ClientFuinjutsuData.get_LVL() > 0) {
-           DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientHooks.openSceauChakraAutruiScreen());
+           DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientHooks.openSceauChakraAutruiScreen(pPlayer, this));
         }else {
            pPlayer.sendSystemMessage(Component.literal(String.format("You do not have the required level to access this seal")));
         }
