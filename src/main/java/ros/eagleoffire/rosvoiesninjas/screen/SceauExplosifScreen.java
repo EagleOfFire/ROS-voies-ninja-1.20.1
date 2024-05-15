@@ -117,14 +117,14 @@ public class SceauExplosifScreen extends Screen {
                     graphics.blit(SELECT_NIV3, (int)(0.885*this.width)/3, (int)(1.97*(this.height)/3), 0, 0, this.imageWidth, this.imageHeight,this.width, this.height);
                     break;
                 case 5:
-                    graphics.blit(SELECT_NIV4, 0, 0, 0, 0, this.imageWidth, this.imageHeight,this.width, this.height);
+                    graphics.blit(SELECT_NIV4, (int)(this.width/4.7), ((this.height)/3)+3, 0, 0, this.imageWidth, this.imageHeight,this.width, this.height);
                     break;
             }
         } else if (ClientFuinjutsuData.get_LVL() == 5) {
             graphics.blit(TEXTURE_NIV5, 0, 0, 0, 0, this.imageWidth, this.imageHeight, this.width, this.height);
             switch(posCursor) {
                 case 1:
-                    graphics.blit(SELECT_NIV5, (int)(this.width/2.1), (this.height)/10, 0, 0, this.imageWidth, this.imageHeight,this.width, this.height);
+                    graphics.blit(SELECT_NIV5, (int)(this.width/2.35), (this.height)/40, 0, 0, this.imageWidth, this.imageHeight,this.width, this.height);
                     break;
                 case 2:
                     graphics.blit(SELECT_NIV1, (int)(1.9*this.width)/3, ((this.height)/3)+2, 0, 0, this.imageWidth, this.imageHeight,this.width, this.height);
@@ -136,7 +136,7 @@ public class SceauExplosifScreen extends Screen {
                     graphics.blit(SELECT_NIV3, (int)(0.885*this.width)/3, (int)(1.97*(this.height)/3), 0, 0, this.imageWidth, this.imageHeight,this.width, this.height);
                     break;
                 case 5:
-                    graphics.blit(SELECT_NIV4, 0, 0, 0, 0, this.imageWidth, this.imageHeight,this.width, this.height);
+                    graphics.blit(SELECT_NIV4, (int)(this.width/4.7), ((this.height)/3)+3, 0, 0, this.imageWidth, this.imageHeight,this.width, this.height);
                     break;
             }
         }

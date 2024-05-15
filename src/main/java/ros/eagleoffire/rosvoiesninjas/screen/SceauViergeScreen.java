@@ -23,6 +23,8 @@ import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauChakraAutrui.SceauChakr
 import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauExplosif.SceauExplosifNiv0Entity;
 import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauScellement.SceauScellementNiv0Entity;
 import ros.eagleoffire.rosvoiesninjas.Items.ModItems;
+import ros.eagleoffire.rosvoiesninjas.networking.ModMessages;
+import ros.eagleoffire.rosvoiesninjas.networking.packet.GiveSceauC2SPacket;
 
 public class SceauViergeScreen extends Screen {
     private static final Component TITLE =
@@ -177,16 +179,16 @@ public class SceauViergeScreen extends Screen {
         int posCursor = getSectorID(mouseX,mouseY,this.minecraft.getWindow().getGuiScaledWidth(),this.minecraft.getWindow().getGuiScaledHeight());
         switch(posCursor) {
             case 1:
-                ItemHandlerHelper.giveItemToPlayer(this.player, ModItems.SCEAU_EXPLOSIF_NIV0_ITEM.get().getDefaultInstance());
+                ModMessages.sendToServer(new GiveSceauC2SPacket("Explosif", 0));
                 break;
             case 2:
-                ItemHandlerHelper.giveItemToPlayer(this.player, ModItems.SCEAU_SCELLEMENT_NIV0_ITEM.get().getDefaultInstance());
+                ModMessages.sendToServer(new GiveSceauC2SPacket("Scellement", 0));
                 break;
             case 3:
-                ItemHandlerHelper.giveItemToPlayer(this.player, ModItems.SCEAU_CHAKRA_NIV0_ITEM.get().getDefaultInstance());
+                ModMessages.sendToServer(new GiveSceauC2SPacket("Chakra", 0));
                 break;
             case 4:
-                ItemHandlerHelper.giveItemToPlayer(this.player, ModItems.SCEAU_CHAKRA_AUTRUI_NIV0_ITEM.get().getDefaultInstance());
+                ModMessages.sendToServer(new GiveSceauC2SPacket("ChakraAutrui", 0));
                 break;
             default:
         }
