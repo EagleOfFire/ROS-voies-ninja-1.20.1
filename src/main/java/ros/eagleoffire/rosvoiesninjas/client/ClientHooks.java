@@ -1,15 +1,16 @@
 package ros.eagleoffire.rosvoiesninjas.client;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.context.UseOnContext;
 import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauChakra.SceauChakraNiv0Entity;
 import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauChakraAutrui.SceauChakraAutruiNiv0Entity;
 import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauExplosif.SceauExplosifNiv0Entity;
 import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauScellement.SceauScellementNiv0Entity;
 import ros.eagleoffire.rosvoiesninjas.screen.*;
+import ros.eagleoffire.rosvoiesninjas.screen.SceauChakra.SceauChakraScreen;
+import ros.eagleoffire.rosvoiesninjas.screen.SceauChakraAutrui.SceauChakraAutruiScreen;
+import ros.eagleoffire.rosvoiesninjas.screen.SceauExplosif.SceauExplosifScreen;
+import ros.eagleoffire.rosvoiesninjas.screen.SceauScellement.SceauScellementScreen;
 
 public class ClientHooks {
     public static void openSceauViergeScreen(Player Player) {
