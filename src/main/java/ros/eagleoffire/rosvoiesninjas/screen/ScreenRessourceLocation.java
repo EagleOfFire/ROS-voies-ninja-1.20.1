@@ -43,6 +43,20 @@ public class ScreenRessourceLocation {
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/explosion/transition/explosion_niv5.png");
     public static final ResourceLocation EXPLOSION_PROGRESS_NIV6 =
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/explosion/transition/explosion_niv6.png");
+    public static final ResourceLocation EXPLOSION_SCEAU_NIV0 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/explosion/transition/explosion_niv0_sceau.png");
+    public static final ResourceLocation EXPLOSION_SCEAU_NIV1 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/explosion/transition/explosion_niv1_sceau.png");
+    public static final ResourceLocation EXPLOSION_SCEAU_NIV2 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/explosion/transition/explosion_niv2_sceau.png");
+    public static final ResourceLocation EXPLOSION_SCEAU_NIV3 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/explosion/transition/explosion_niv3_sceau.png");
+    public static final ResourceLocation EXPLOSION_SCEAU_NIV4 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/explosion/transition/explosion_niv4_sceau.png");
+    public static final ResourceLocation EXPLOSION_SCEAU_NIV5 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/explosion/transition/explosion_niv5_sceau.png");
+    public static final ResourceLocation EXPLOSION_SCEAU_NIV6 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/explosion/transition/explosion_niv6_sceau.png");
 
     public static final ResourceLocation CHAKRA_TEXTURE_NIV1 =
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/screen_choix_niveau_sceau_chakra_niv1.png");
@@ -68,6 +82,20 @@ public class ScreenRessourceLocation {
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/transition/chakra_niv5.png");
     public static final ResourceLocation CHAKRA_PROGRESS_NIV6 =
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/transition/chakra_niv6.png");
+    public static final ResourceLocation CHAKRA_SCEAU_NIV0 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/transition/chakra_niv0_sceau.png");
+    public static final ResourceLocation CHAKRA_SCEAU_NIV1 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/transition/chakra_niv1_sceau.png");
+    public static final ResourceLocation CHAKRA_SCEAU_NIV2 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/transition/chakra_niv2_sceau.png");
+    public static final ResourceLocation CHAKRA_SCEAU_NIV3 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/transition/chakra_niv3_sceau.png");
+    public static final ResourceLocation CHAKRA_SCEAU_NIV4 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/transition/chakra_niv4_sceau.png");
+    public static final ResourceLocation CHAKRA_SCEAU_NIV5 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/transition/chakra_niv5_sceau.png");
+    public static final ResourceLocation CHAKRA_SCEAU_NIV6 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/chakra/transition/chakra_niv6_sceau.png");
     
     public static final ResourceLocation CHAKRA_AUTRUI_TEXTURE_NIV1 =
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/screen_choix_niveau_sceau_chakra_autrui_niv1.png");
@@ -93,6 +121,20 @@ public class ScreenRessourceLocation {
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/transition/restriction_niv5.png");
     public static final ResourceLocation CHAKRA_AUTRUI_PROGRESS_NIV6 =
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/transition/restriction_niv6.png");
+    public static final ResourceLocation CHAKRA_AUTRUI_SCEAU_NIV0 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/transition/restriction_niv0_sceau.png");
+    public static final ResourceLocation CHAKRA_AUTRUI_SCEAU_NIV1 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/transition/restriction_niv1_sceau.png");
+    public static final ResourceLocation CHAKRA_AUTRUI_SCEAU_NIV2 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/transition/restriction_niv2_sceau.png");
+    public static final ResourceLocation CHAKRA_AUTRUI_SCEAU_NIV3 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/transition/restriction_niv3_sceau.png");
+    public static final ResourceLocation CHAKRA_AUTRUI_SCEAU_NIV4 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/transition/restriction_niv4_sceau.png");
+    public static final ResourceLocation CHAKRA_AUTRUI_SCEAU_NIV5 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/transition/restriction_niv5_sceau.png");
+    public static final ResourceLocation CHAKRA_AUTRUI_SCEAU_NIV6 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/restriction/transition/restriction_niv6_sceau.png");
 
     public static final ResourceLocation SCELLEMENT_TEXTURE_NIV1 =
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/screen_choix_niveau_sceau_scellement_niv1.png");
@@ -118,6 +160,20 @@ public class ScreenRessourceLocation {
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/transition/verrouillage_niv5.png");
     public static final ResourceLocation SCELLEMENT_PROGRESS_NIV6 =
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/transition/verrouillage_niv6.png");
+    public static final ResourceLocation SCELLEMENT_SCEAU_NIV0 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/transition/verrouillage_niv0_sceau.png");
+    public static final ResourceLocation SCELLEMENT_SCEAU_NIV1 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/transition/verrouillage_niv1_sceau.png");
+    public static final ResourceLocation SCELLEMENT_SCEAU_NIV2 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/transition/verrouillage_niv2_sceau.png");
+    public static final ResourceLocation SCELLEMENT_SCEAU_NIV3 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/transition/verrouillage_niv3_sceau.png");
+    public static final ResourceLocation SCELLEMENT_SCEAU_NIV4 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/transition/verrouillage_niv4_sceau.png");
+    public static final ResourceLocation SCELLEMENT_SCEAU_NIV5 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/transition/verrouillage_niv4_sceau.png");
+    public static final ResourceLocation SCELLEMENT_SCEAU_NIV6 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/verrouillage/transition/verrouillage_niv5_sceau.png");
     
     public static final ResourceLocation NEUTRE =
             new ResourceLocation(ROSVoiesNinjas.MODID, "textures/gui/back_ground_sceau_neutre.png");
