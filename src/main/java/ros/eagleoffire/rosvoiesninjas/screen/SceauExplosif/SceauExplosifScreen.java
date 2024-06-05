@@ -1,5 +1,6 @@
 package ros.eagleoffire.rosvoiesninjas.screen.SceauExplosif;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -10,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 import ros.eagleoffire.rosvoiesninjas.ROSVoiesNinjas;
 import ros.eagleoffire.rosvoiesninjas.client.ProgressionVoiesNinjasData.ClientFuinjutsuData;
 import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauExplosif.SceauExplosifNiv0Entity;
+import ros.eagleoffire.rosvoiesninjas.networking.ModMessages;
+import ros.eagleoffire.rosvoiesninjas.networking.packet.GiveSceauC2SPacket;
 import ros.eagleoffire.rosvoiesninjas.screen.ScreenRessourceLocation;
 
 public class SceauExplosifScreen extends Screen {
@@ -76,8 +79,7 @@ public class SceauExplosifScreen extends Screen {
     public int getDrawingProgress(int subIndex, int maxProgress, int progressArrowSize) {
         int numSubProgresses = transition+1;
         double subMaxProgress = maxProgress / (double) numSubProgresses;
-        //subProgresses[subIndex] += 0.1 / numSubProgresses;
-        subProgresses[subIndex] += 0.1 * numSubProgresses;
+        subProgresses[subIndex] += 0.2;
 
         return subProgresses[subIndex] != 0 ? (int) (subProgresses[subIndex] * progressArrowSize / subMaxProgress) : 0;
     }
@@ -118,7 +120,7 @@ public class SceauExplosifScreen extends Screen {
     private void renderTransition(GuiGraphics graphics) {
         long actualPlayerTick = player.tickCount;
         oldPlayerTick = oldPlayerTick == 0 ? actualPlayerTick : oldPlayerTick;
-        int[] deltas = {0, 200, 300, 400, 500, 600}; // Integer.MAX_VALUE for case 5
+        int[] deltas = {0, 200, 300, 400, 500, 600};
         int[] maxProgresses = {0, 150, 225, 300, 375, 450};
 
         int index = (transition >= 1 && transition <= 5) ? transition : 0;
@@ -129,27 +131,27 @@ public class SceauExplosifScreen extends Screen {
         if (delta>(deltas[index])){
             creationResult();
         }else if (deltas[1]/2 >= delta) {
-            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV1, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(0,700,this.imageHeight), this.width, this.height);
+            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV1, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(0,300,this.imageHeight/2), this.width, this.height);
             renderProgress(graphics, maxProgress);
         }else if (deltas[1] >= delta) {
             graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV1, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, this.imageHeight, this.width, this.height);
-            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV2, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(1,600,this.imageHeight), this.width, this.height);
+            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV2, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(1,300,this.imageHeight/2), this.width, this.height);
             renderProgress(graphics, maxProgress);
         }else if (deltas[2] >= delta) {
             graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV2, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, this.imageHeight, this.width, this.height);
-            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV3, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(2,400,this.imageHeight), this.width, this.height);
+            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV3, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(2,300,this.imageHeight/3), this.width, this.height);
             renderProgress(graphics, maxProgress);
         }else if (deltas[3] >= delta) {
             graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV3, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, this.imageHeight, this.width, this.height);
-            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV4, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(3,400,this.imageHeight), this.width, this.height);
+            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV4, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(3,300,this.imageHeight/3), this.width, this.height);
             renderProgress(graphics, maxProgress);
         }else if (deltas[4] >= delta) {
             graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV4, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, this.imageHeight, this.width, this.height);
-            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV5, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(4,400,this.imageHeight), this.width, this.height);
+            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV5, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(4,300,this.imageHeight/3), this.width, this.height);
             renderProgress(graphics, maxProgress);
         }else {
             graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV5, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, this.imageHeight, this.width, this.height);
-            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV6, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(5,400,this.imageHeight), this.width, this.height);
+            graphics.blit(ScreenRessourceLocation.EXPLOSION_SCEAU_NIV6, 0, (int)(0.287*this.imageHeight), 0, (int)(0.287*this.imageHeight), this.imageWidth, getDrawingProgress(5,300,this.imageHeight/3), this.width, this.height);
             renderProgress(graphics, maxProgress);
         }
     }
@@ -199,8 +201,8 @@ public class SceauExplosifScreen extends Screen {
     }
 
     private void creationResult() {
-        //ModMessages.sendToServer(new GiveSceauC2SPacket("Explosif", this.transition));
-        //this.SE0E.kill();
-        //Minecraft.getInstance().setScreen(null);
+        ModMessages.sendToServer(new GiveSceauC2SPacket("Explosif", this.transition));
+        this.SE0E.kill();
+        Minecraft.getInstance().setScreen(null);
     }
 }
