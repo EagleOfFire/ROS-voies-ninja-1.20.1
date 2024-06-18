@@ -35,6 +35,7 @@ import net.minecraft.world.phys.Vec3;
 import org.apache.commons.lang3.Validate;
 import org.slf4j.Logger;
 import ros.eagleoffire.rosvoiesninjas.entity.ModEntities;
+import ros.eagleoffire.rosvoiesninjas.utils.Utils;
 
 import javax.annotation.Nullable;
 import java.util.OptionalInt;
@@ -167,21 +168,14 @@ public class SceauExplosifNiv3Entity extends HangingEntity {
     * Called when the entity is attacked.
     */
    public boolean hurt(DamageSource pSource, float pAmount) {
-      if (this.fixed) {
-         return !pSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && !pSource.isCreativePlayer() ? false : super.hurt(pSource, pAmount);
-      } else if (this.isInvulnerableTo(pSource)) {
-         return false;
-      } else if (!pSource.is(DamageTypeTags.IS_EXPLOSION) && !this.getItem().isEmpty()) {
-         if (!this.level().isClientSide) {
+        if (!this.level().isClientSide) {
             this.dropItem(pSource.getEntity(), false);
             this.gameEvent(GameEvent.BLOCK_CHANGE, pSource.getEntity());
             this.playSound(this.getRemoveItemSound(), 1.0F, 1.0F);
-         }
-
-         return true;
-      } else {
-         return super.hurt(pSource, pAmount);
-      }
+            this.kill();
+            this.level().explode(pSource.getEntity(), this.getX(), this.getY(), this.getZ(), Utils.explosionRadius(3), Level.ExplosionInteraction.BLOCK);
+        }
+        return super.hurt(pSource, pAmount);
    }
 
    public SoundEvent getRemoveItemSound() {
