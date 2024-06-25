@@ -15,6 +15,7 @@ import ros.eagleoffire.rosvoiesninjas.Items.ModCreativeModTabs;
 import ros.eagleoffire.rosvoiesninjas.Items.ModItems;
 import ros.eagleoffire.rosvoiesninjas.entity.ModEntities;
 import ros.eagleoffire.rosvoiesninjas.networking.ModMessages;
+import ros.eagleoffire.rosvoiesninjas.event.SceauScellementInteractionEventHandler;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ROSVoiesNinjas.MODID)
@@ -33,6 +34,7 @@ public class ROSVoiesNinjas {
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new SceauScellementInteractionEventHandler());
         modEventBus.addListener(this::addCreative);
     }
 
