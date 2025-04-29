@@ -2,8 +2,13 @@ package ros.eagleoffire.rosvoiesninjas.client;
 
 import net.minecraft.client.Minecraft;
 import ros.eagleoffire.rosvoiesninjas.screen.FuinjutsuScreen;
+import ros.eagleoffire.rosvoiesninjas.screen.VoiesNinjasScreen;
 
 public class ClientHooks {
+    public static void openVoiesNinjas(){
+        Minecraft.getInstance().setScreen(new VoiesNinjasScreen(Minecraft.getInstance().player));
+    }
+
     public static void openFuinjutsu(){
         Minecraft.getInstance().setScreen(new FuinjutsuScreen(Minecraft.getInstance().player));
     }

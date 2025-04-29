@@ -87,7 +87,6 @@ public class FuinjutsuScreen extends Screen {
         }
     }
 
-
     @Override
     public boolean isPauseScreen() {
         return false;

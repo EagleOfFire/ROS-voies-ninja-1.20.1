@@ -23,15 +23,15 @@ public class ScreensTextures {
             new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_button_investir_token_selected.png");
 
     public static final ResourceLocation FUINJUTSU_MENU =
-            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsu/fuinjutsu_menu.png");
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsumenu/fuinjutsu_menu.png");
     public static final ResourceLocation FUINJUTSU_MENU_BARRIERE_SELECTED =
-            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsu/fuinjutsu_menu_barriere_selected.png");
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsumenu/fuinjutsu_menu_barriere_selected.png");
     public static final ResourceLocation FUINJUTSU_MENU_EXPLOSIF_SELECTED =
-            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsu/fuinjutsu_menu_explosif_selected.png");
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsumenu/fuinjutsu_menu_explosif_selected.png");
     public static final ResourceLocation FUINJUTSU_MENU_FUMIGENE_SELECTED =
-            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsu/fuinjutsu_menu_fumigene_selected.png");
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsumenu/fuinjutsu_menu_fumigene_selected.png");
     public static final ResourceLocation FUINJUTSU_MENU_MINE_CHAKRAIQUE_SELECTED =
-            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsu/fuinjutsu_menu_mine_chakraique_selected.png");
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsumenu/fuinjutsu_menu_mine_chakraique_selected.png");
     public static final ResourceLocation FUINJUTSU_MENU_STOCKAGE_CHAKRA_SELECTED =
-            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsu/fuinjutsu_menu_stockage_chakra_selected.png");
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsumenu/fuinjutsu_menu_stockage_chakra_selected.png");
 }
