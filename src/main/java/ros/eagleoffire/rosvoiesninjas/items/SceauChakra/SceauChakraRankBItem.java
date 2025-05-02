@@ -1,24 +1,29 @@
-package ros.eagleoffire.rosvoiesninjas.items.SceauExplosif;
+
+package ros.eagleoffire.rosvoiesninjas.items.SceauChakra;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HangingEntityItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
-import ros.eagleoffire.rosvoiesninjas.entity.ModEntities;
-import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauExplosif.SceauExplosifNiv3Entity;
+import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauChakra.SceauChakraNiv3Entity;
 
+public class SceauChakraRankBItem extends HangingEntityItem {
+    public SceauChakraRankBItem(EntityType<? extends HangingEntity> pType, Properties pProperties) {
+        super(pType, pProperties);
+    }
 
-public class SceauExplosifNiv3Item extends HangingEntityItem {
-    public SceauExplosifNiv3Item(Properties pProperties) {
+    public SceauChakraRankBItem(Properties pProperties) {
         //super(ModEntities.SCEAU_EXPLOSIF.get(), pProperties);
         super(EntityType.ITEM_FRAME, pProperties);
     }
+
 
     protected boolean mayPlace(Player pPlayer, Direction pDirection, ItemStack pItemStack, BlockPos pPos) {
         return !pPlayer.level().isOutsideBuildHeight(pPos) && pPlayer.mayUseItemAt(pPos, pDirection, pItemStack);
@@ -30,7 +35,7 @@ public class SceauExplosifNiv3Item extends HangingEntityItem {
          BlockPos blockpos = pContext.getClickedPos();
          Direction direction = pContext.getClickedFace();
          BlockPos blockpos1 = blockpos.relative(direction);
-         SceauExplosifNiv3Entity hangingentity = new SceauExplosifNiv3Entity(ModEntities.SCEAU_EXPLOSIF_NIV3.get(), level, blockpos1, direction);
+         SceauChakraNiv3Entity hangingentity = new SceauChakraNiv3Entity(level, blockpos1, direction);
          hangingentity.setDirection(direction);
          Player player = pContext.getPlayer();
          hangingentity.playPlacementSound();

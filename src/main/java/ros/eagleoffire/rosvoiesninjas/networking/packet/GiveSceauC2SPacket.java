@@ -33,7 +33,7 @@ public class GiveSceauC2SPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
             ServerPlayer player = supplier.get().getSender();
-            if(Objects.equals(sceauName, "Explosif")) {
+/*            if(Objects.equals(sceauName, "Explosif")) {
                 if (nivSceau == 1){
                     player.addItem(new ItemStack(ModItems.SCEAU_EXPLOSIF_NIV1_ITEM.get(), 1));
                 } else if (nivSceau == 2) {
@@ -57,7 +57,7 @@ public class GiveSceauC2SPacket {
                 }else if (nivSceau == 5){
                     player.addItem(new ItemStack(ModItems.SCEAU_CHAKRA_NIV5_ITEM.get(), 1));
                 }
-            }
+            }*/
         });
     }
 }
