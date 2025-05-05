@@ -14,20 +14,38 @@ public class ModCreativeModTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ROSVoiesNinjas.MODID);
 
     public static final RegistryObject<CreativeModeTab> ROS_VOIES_NINJAS_TAB = CREATIVE_MODE_TAB.register("ros_voies_ninjas_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SCEAU_EXPLOSIF_NIV5_ITEM.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SCEAU_EXPLOSIF_RANK_S_ITEM.get()))
                     .title(Component.translatable("creativetab.ros_voies_ninjas_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_NIV1_ITEM.get());
-                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_NIV2_ITEM.get());
-                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_NIV3_ITEM.get());
-                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_NIV4_ITEM.get());
-                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_NIV5_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_RANK_D_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_RANK_C_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_RANK_B_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_RANK_A_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_EXPLOSIF_RANK_S_ITEM.get());
 
-                        pOutput.accept(ModItems.SCEAU_CHAKRA_NIV1_ITEM.get());
-                        pOutput.accept(ModItems.SCEAU_CHAKRA_NIV2_ITEM.get());
-                        pOutput.accept(ModItems.SCEAU_CHAKRA_NIV3_ITEM.get());
-                        pOutput.accept(ModItems.SCEAU_CHAKRA_NIV4_ITEM.get());
-                        pOutput.accept(ModItems.SCEAU_CHAKRA_NIV5_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_CHAKRA_RANK_D_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_CHAKRA_RANK_C_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_CHAKRA_RANK_B_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_CHAKRA_RANK_A_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_CHAKRA_RANK_S_ITEM.get());
+
+                        pOutput.accept(ModItems.SCEAU_BARRIERE_RANK_D_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_BARRIERE_RANK_C_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_BARRIERE_RANK_B_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_BARRIERE_RANK_A_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_BARRIERE_RANK_S_ITEM.get());
+                        
+                        pOutput.accept(ModItems.SCEAU_FUMIGENE_RANK_D_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_FUMIGENE_RANK_C_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_FUMIGENE_RANK_B_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_FUMIGENE_RANK_A_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_FUMIGENE_RANK_S_ITEM.get());
+
+                        pOutput.accept(ModItems.SCEAU_MINE_CHAKRA_RANK_D_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_MINE_CHAKRA_RANK_C_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_MINE_CHAKRA_RANK_B_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_MINE_CHAKRA_RANK_A_ITEM.get());
+                        pOutput.accept(ModItems.SCEAU_MINE_CHAKRA_RANK_S_ITEM.get());
                     })
                     .build());
 

@@ -11,11 +11,11 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import ros.eagleoffire.rosvoiesninjas.entity.ModEntities;
-import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauExplosif.SceauExplosifNiv4Entity;
+import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauExplosif.SceauExplosifNiv3Entity;
 
 
-public class SceauExplosifNiv4Item extends HangingEntityItem {
-    public SceauExplosifNiv4Item(Properties pProperties) {
+public class SceauExplosifRankBItem extends HangingEntityItem {
+    public SceauExplosifRankBItem(Properties pProperties) {
         //super(ModEntities.SCEAU_EXPLOSIF.get(), pProperties);
         super(EntityType.ITEM_FRAME, pProperties);
     }
@@ -30,7 +30,7 @@ public class SceauExplosifNiv4Item extends HangingEntityItem {
          BlockPos blockpos = pContext.getClickedPos();
          Direction direction = pContext.getClickedFace();
          BlockPos blockpos1 = blockpos.relative(direction);
-         SceauExplosifNiv4Entity hangingentity = new SceauExplosifNiv4Entity(ModEntities.SCEAU_EXPLOSIF_NIV4.get(), level, blockpos1, direction);
+         SceauExplosifNiv3Entity hangingentity = new SceauExplosifNiv3Entity(ModEntities.SCEAU_EXPLOSIF_NIV3.get(), level, blockpos1, direction);
          hangingentity.setDirection(direction);
          Player player = pContext.getPlayer();
          hangingentity.playPlacementSound();

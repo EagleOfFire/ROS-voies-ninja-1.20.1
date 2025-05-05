@@ -5,21 +5,17 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HangingEntityItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
-import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauChakra.SceauChakraNiv1Entity;
+import ros.eagleoffire.rosvoiesninjas.entity.custom.SceauChakra.SceauChakraNiv4Entity;
 
-public class SceauChakraNiv1Item extends HangingEntityItem {
-    public SceauChakraNiv1Item(EntityType<? extends HangingEntity> pType, Properties pProperties) {
-        super(pType, pProperties);
-    }
+public class SceauChakraRankAItem extends HangingEntityItem {
 
-    public SceauChakraNiv1Item(Properties pProperties) {
+    public SceauChakraRankAItem(Properties pProperties) {
         //super(ModEntities.SCEAU_EXPLOSIF.get(), pProperties);
         super(EntityType.ITEM_FRAME, pProperties);
     }
@@ -35,7 +31,7 @@ public class SceauChakraNiv1Item extends HangingEntityItem {
          BlockPos blockpos = pContext.getClickedPos();
          Direction direction = pContext.getClickedFace();
          BlockPos blockpos1 = blockpos.relative(direction);
-         SceauChakraNiv1Entity hangingentity = new SceauChakraNiv1Entity(level, blockpos1, direction);
+         SceauChakraNiv4Entity hangingentity = new SceauChakraNiv4Entity(level, blockpos1, direction);
          hangingentity.setDirection(direction);
          Player player = pContext.getPlayer();
          hangingentity.playPlacementSound();

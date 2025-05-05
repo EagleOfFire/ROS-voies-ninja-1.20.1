@@ -45,4 +45,25 @@ public class ScreensTextures {
             new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsumenu/fuinjutsu_menu_mine_chakraique_selected.png");
     public static final ResourceLocation FUINJUTSU_MENU_STOCKAGE_CHAKRA_SELECTED =
             new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsumenu/fuinjutsu_menu_stockage_chakra_selected.png");
+
+    public static final ResourceLocation NUMBER_0 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number0.png");
+    public static final ResourceLocation NUMBER_1 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number1.png");
+    public static final ResourceLocation NUMBER_2 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number2.png");
+    public static final ResourceLocation NUMBER_3 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number3.png");
+    public static final ResourceLocation NUMBER_4 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number4.png");
+    public static final ResourceLocation NUMBER_5 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number5.png");
+    public static final ResourceLocation NUMBER_6 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number6.png");
+    public static final ResourceLocation NUMBER_7 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number7.png");
+    public static final ResourceLocation NUMBER_8 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number8.png");
+    public static final ResourceLocation NUMBER_9 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/number/number9.png");
 }
