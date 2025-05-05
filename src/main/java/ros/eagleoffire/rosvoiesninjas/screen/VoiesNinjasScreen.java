@@ -48,76 +48,31 @@ public class VoiesNinjasScreen extends Screen {
 
         int slots = 6;  // always circles+1
         int slotW = this.width / slots;
-        int drawY = (this.height * 3) / 4;
-        int yellowW = this.width / 15;
-        int yellowH = (int) ((this.width / 15) * 1.06);
+        int drawY = (this.height * 4) / 6;
+        int yellowW = this.width / 35;
+        int yellowH = yellowW;
 
         int posCursor = getSectorID(mouseX, this.width);
         if (posCursor == 1) {
             int drawX = ((this.width * posCursor) / 6) - yellowW;
             graphics.blit(ScreensTextures.MAIN_MENU_GENJUTSU_SELECTED, 0, 0, 0, 0, this.width, this.height, this.width, this.height);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 2) / 6) - ((3 * yellowW) / 4), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 3) / 6) - (yellowW / 2), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 4) / 6) - (yellowW / 4), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 5) / 6), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(
-                    ScreensTextures.TOKEN_SELECTED,
-                    drawX, drawY,
-                    0, 0,
-                    yellowW, yellowH,
-                    yellowW, yellowH);
+            graphics.blit(ScreensTextures.TOKEN, (int) ((this.width * 1) / 15.25), drawY - (yellowW / 3), 0, 0, yellowW, yellowH, yellowW, yellowH);
         } else if (posCursor == 2) {
             int drawX = ((this.width * posCursor) / 6) - ((3 * yellowW) / 4);
             graphics.blit(ScreensTextures.MAIN_MENU_FUINJUTSU_SELECTED, 0, 0, 0, 0, this.width, this.height, this.width, this.height);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width) / 6) - yellowW, drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 3) / 6) - (yellowW / 2), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 4) / 6) - (yellowW / 4), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 5) / 6), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(
-                    ScreensTextures.TOKEN_SELECTED,
-                    drawX, drawY,
-                    0, 0,
-                    yellowW, yellowH,
-                    yellowW, yellowH);
+            graphics.blit(ScreensTextures.TOKEN, (int) ((this.width * 1) / 4.07), drawY - (yellowW / 3), 0, 0, yellowW, yellowH, yellowW, yellowH);
         } else if (posCursor == 3) {
             int drawX = ((this.width * posCursor) / 6) - (yellowW / 2);
             graphics.blit(ScreensTextures.MAIN_MENU_MEDICAL_SELECTED, 0, 0, 0, 0, this.width, this.height, this.width, this.height);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width) / 6) - yellowW, drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 2) / 6) - ((3 * yellowW) / 4), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 4) / 6) - (yellowW / 4), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 5) / 6), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(
-                    ScreensTextures.TOKEN_SELECTED,
-                    drawX, drawY,
-                    0, 0,
-                    yellowW, yellowH,
-                    yellowW, yellowH);
+            graphics.blit(ScreensTextures.TOKEN, (int) (((this.width * 1) / 15.25)*6.5), drawY - (yellowW / 3), 0, 0, yellowW, yellowH, yellowW, yellowH);
         } else if (posCursor == 4) {
             int drawX = ((this.width * posCursor) / 6) - (yellowW / 4);
             graphics.blit(ScreensTextures.MAIN_MENU_SENSORIEL_SELECTED, 0, 0, 0, 0, this.width, this.height, this.width, this.height);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width) / 6) - yellowW, drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 2) / 6) - ((3 * yellowW) / 4), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 3) / 6) - (yellowW / 2), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 5) / 6), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(
-                    ScreensTextures.TOKEN_SELECTED,
-                    drawX, drawY,
-                    0, 0,
-                    yellowW, yellowH,
-                    yellowW, yellowH);
+            graphics.blit(ScreensTextures.TOKEN, (int) (((this.width * 1) / 15.25)*9.25), drawY - (yellowW / 3), 0, 0, yellowW, yellowH, yellowW, yellowH);
         } else if (posCursor == 5) {
             int drawX = ((this.width * posCursor) / 6);
             graphics.blit(ScreensTextures.MAIN_MENU_INFILTRATION_SELECTED, 0, 0, 0, 0, this.width, this.height, this.width, this.height);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width) / 6) - yellowW, drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 2) / 6) - ((3 * yellowW) / 4), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 3) / 6) - (yellowW / 2), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(ScreensTextures.TOKEN, ((this.width * 4) / 6) - (yellowW / 4), drawY, 0, 0, yellowW, yellowH, yellowW, yellowH);
-            graphics.blit(
-                    ScreensTextures.TOKEN_SELECTED,
-                    drawX, drawY,
-                    0, 0,
-                    yellowW, yellowH,
-                    yellowW, yellowH);
+            graphics.blit(ScreensTextures.TOKEN, (int) (((this.width * 1) / 15.25)*12), drawY - (yellowW / 3), 0, 0, yellowW, yellowH, yellowW, yellowH);
         } else {
             graphics.blit(ScreensTextures.MAIN_MENU, 0, 0, 0, 0, this.width, this.height, this.width, this.height);
         }

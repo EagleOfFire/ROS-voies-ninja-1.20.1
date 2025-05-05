@@ -18,9 +18,20 @@ public class ScreensTextures {
             new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_main_menu_sensoriel_selected.png");
 
     public static final ResourceLocation TOKEN =
-            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_button_investir_token.png");
-    public static final ResourceLocation TOKEN_SELECTED =
             new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_button_investir_token_selected.png");
+
+    public static final ResourceLocation CONTAINER_ELIPSE_0 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_container_elipse_0_5.png");
+    public static final ResourceLocation CONTAINER_ELIPSE_1 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_container_elipse_1_5.png");
+    public static final ResourceLocation CONTAINER_ELIPSE_2 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_container_elipse_2_5.png");
+    public static final ResourceLocation CONTAINER_ELIPSE_3 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_container_elipse_3_5.png");
+    public static final ResourceLocation CONTAINER_ELIPSE_4 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_container_elipse_4_5.png");
+    public static final ResourceLocation CONTAINER_ELIPSE_5 =
+            new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/voiesninjasmenuprincipal/voie_ninja_container_elipse_5_5.png");
 
     public static final ResourceLocation FUINJUTSU_MENU =
             new ResourceLocation(ROSVoiesNinjas.MODID, "/textures/gui/fuinjutsumenu/fuinjutsu_menu.png");
