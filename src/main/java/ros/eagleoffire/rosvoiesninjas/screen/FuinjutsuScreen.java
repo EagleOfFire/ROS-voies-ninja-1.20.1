@@ -65,7 +65,7 @@ public class FuinjutsuScreen extends Screen {
             DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientHooks::openFuinjutsuFumigene);
         } else if (posCursor == 5) {
             Minecraft.getInstance().setScreen(null);
-            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientHooks::openFuinjutsuBariere);
+            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientHooks::openFuinjutsuBarriere);
         } else if (posCursor == 6) {
             Minecraft.getInstance().setScreen(null);
             DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientHooks::openFuinjutsuStockage);

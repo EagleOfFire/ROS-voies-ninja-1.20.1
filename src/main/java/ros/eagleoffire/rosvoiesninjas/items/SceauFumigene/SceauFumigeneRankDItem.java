@@ -1,4 +1,9 @@
 package ros.eagleoffire.rosvoiesninjas.items.SceauFumigene;
 
-public class SceauFumigeneRankDItem {
+import net.minecraft.world.item.Item;
+
+public class SceauFumigeneRankDItem extends Item{
+    public SceauFumigeneRankDItem(Item.Properties properties) {
+        super(properties);
+    }
 }
